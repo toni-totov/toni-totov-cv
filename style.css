@@ -285,8 +285,7 @@ footer {
 }
 
 @keyframes bugFlicker {
-    0%, 100% { opacity: 0.9; }
-    50% { opacity: 0.4; }
+    0%, 100% { transform: translate(0, 0); }
     10% { transform: translate(1px, -1px); }
     12% { transform: translate(-1px, 1px); }
 }

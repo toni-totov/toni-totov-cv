@@ -8,21 +8,29 @@
 </head>
 <body>
     <div class="page-border"></div>
-    <div class="top-mask"></div>
-    <div class="bottom-mask"></div>
-    
+
     <div class="fixed-footer">
         <span>Aperture Science &copy; 1998 - 2026</span>
         <span>CONFIDENTIAL DOSSIER</span>
         <span>Valve Corporation</span>
     </div>
 
-    <div class="document-container">
-        <header class="doc-header">
-            <h1>APERTURE SCIENCE TERMINAL</h1>
-            <div class="status">PHYSICAL DOSSIER | SUBJECT: TONI TOTOV</div>
-            <div class="divider"></div>
-        </header>
+    <table class="print-layout-table">
+        <thead class="print-header">
+            <tr>
+                <td><div class="header-spacer"></div></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div class="document-container">
+                        <header class="doc-header">
+                            <h1>APERTURE SCIENCE TERMINAL</h1>
+                            <div class="status">PHYSICAL DOSSIER | SUBJECT: TONI TOTOV</div>
+                            <div style="margin-top: 0.5rem; font-size: 10pt;">INTERACTIVE TERMINAL: <a href="https://toni-totov.github.io/toni-totov-cv/">https://toni-totov.github.io/toni-totov-cv/</a></div>
+                            <div class="divider"></div>
+                        </header>
 
         <section class="overview">
             <h2>TEST SUBJECT OVERVIEW</h2>
@@ -149,15 +157,23 @@
                 <p>Email: <a href="mailto:tonytotov@gmail.com">tonytotov@gmail.com</a></p>
                 <p>Phone: <a href="tel:+359889846860">+359 889 846 860</a></p>
                 <p>Network: <a href="https://www.linkedin.com/in/tonitotov">LinkedIn Profile</a></p>
+                <p>Terminal: <a href="https://toni-totov.github.io/toni-totov-cv/">https://toni-totov.github.io/toni-totov-cv/</a></p>
             </div>
         </section>
 
-        <footer>
-            <div class="divider"></div>
-            <p>Aperture Science &copy; 1998 - 2026. "We do what we must, because we can."</p>
-            <p>No copyright infringement intended. Only to be seen from Valve Corporation.</p>
-        </footer>
-    </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot class="print-footer">
+            <tr>
+                <td>
+                    <div class="footer-spacer">.</div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
     <script>
         window.onload = function() {
             setTimeout(() => {

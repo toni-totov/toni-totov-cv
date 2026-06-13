@@ -11,6 +11,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-shadow: none !important;
+    box-shadow: none !important;
 }
 
 @page {
@@ -37,31 +39,24 @@ body {
     right: 10mm;
     border: 2px solid var(--aperture-amber);
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(255, 176, 0, 0.3), inset 0 0 15px rgba(255, 176, 0, 0.3);
     pointer-events: none;
-    z-index: 999;
+    z-index: -1; 
 }
 
-.top-mask {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 22mm;
-    background: linear-gradient(to bottom, rgba(8,8,8,1) 50%, rgba(8,8,8,0) 100%);
-    z-index: 998;
-    pointer-events: none;
+.print-layout-table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.bottom-mask {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 35mm;
-    background: linear-gradient(to top, rgba(8,8,8,1) 55%, rgba(8,8,8,0) 100%);
-    z-index: 998;
-    pointer-events: none;
+.print-layout-table td {
+    padding: 0;
+    border: none;
+}
+
+.header-spacer {
+    height: 25mm;
+    color: transparent;
+    overflow: hidden;
 }
 
 .fixed-footer {
@@ -72,15 +67,18 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: 8pt;
-    opacity: 0.6;
-    z-index: 1000;
+    color: rgba(255, 176, 0, 0.6);
+}
+
+.footer-spacer {
+    height: 25mm;
+    color: transparent;
+    overflow: hidden;
 }
 
 .document-container {
     max-width: 100%;
     margin: 0 auto;
-    padding-top: 25mm;
-    padding-bottom: 40mm;
 }
 
 header.doc-header {
@@ -107,6 +105,18 @@ header h1 {
 
 section {
     margin-bottom: 2rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+section.anomalies {
+    page-break-inside: auto;
+    break-inside: auto;
+}
+
+section.motivation {
+    page-break-before: always;
+    break-before: page;
 }
 
 h2 {
@@ -116,6 +126,8 @@ h2 {
     border-bottom: 1px solid var(--aperture-amber);
     display: inline-block;
     padding-bottom: 0.2rem;
+    page-break-after: avoid;
+    break-after: avoid;
 }
 
 .content-block {
@@ -124,6 +136,8 @@ h2 {
 
 p {
     margin-bottom: 0.8rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 strong {
@@ -157,12 +171,14 @@ strong {
     margin-bottom: 1.5rem;
     border-left: 2px solid rgba(255, 176, 0, 0.3);
     padding-left: 1rem;
+    page-break-inside: avoid;
+    break-inside: avoid;
 }
 
 a {
     color: var(--aperture-amber);
     text-decoration: none;
-    border-bottom: 1px dotted var(--aperture-amber);
+    border-bottom: 1px solid var(--aperture-amber);
 }
 
 footer {
