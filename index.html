@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aperture Science - Test Subject Dossier: Toni Totov</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Interactive Terminal CV for Valve Corporation - Toni Totov">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="scanlines"></div>
+    
+    <div class="terminal-container">
+        <!-- Init Screen (Required to allow browser audio playback) -->
+        <div id="init-screen" class="screen active">
+            <button id="init-btn">ESTABLISH CONNECTION (ENABLE AUDIO)</button>
+        </div>
+
+        <!-- Boot Sequence -->
+        <div id="boot-sequence" class="screen hidden">
+            <p class="typing" data-text="Aperture OS v.2.3.0..."></p>
+            <p class="typing delay-1" data-text="Initializing Core Audio Systems..."></p>
+            <p class="typing delay-2" data-text="Loading Test Subject Data [ID: TOTOV]..."></p>
+            <p class="typing delay-3" data-text="Access Granted."></p>
+            <button id="enter-btn" class="delay-4">Press ENTER to Continue</button>
+        </div>
+
+        <!-- Main Interface -->
+        <div id="main-interface" class="screen hidden">
+            <header>
+                <h1>APERTURE SCIENCE TERMINAL</h1>
+                <div>
+                    <div class="status">STATUS: ONLINE | SUBJECT: TONI TOTOV</div>
+                    <div id="bug-counter" style="color: rgba(255, 70, 70, 0.9); font-weight: bold; margin-top: 0.5rem; display: none; text-align: right;">ANOMALIES RESOLVED: 0 / 10</div>
+                </div>
+            </header>
+            
+            <nav>
+                <button class="nav-btn active" data-target="overview">OVERVIEW</button>
+                <button class="nav-btn" data-target="experience">TEST LOGS (EXP)</button>
+                <button class="nav-btn" data-target="attributes">CAPABILITIES</button>
+                <button class="nav-btn" data-target="motivation">MOTIVATION</button>
+                <button class="nav-btn" data-target="contact">CONTACT</button>
+            </nav>
+
+            <main>
+                <section id="overview" class="content-section active">
+                    <h2>Test Subject Overview</h2>
+                    <p>Name: Toni Totov</p>
+                    <p>Designation: Performance Marketing Specialist</p>
+                    <p>Location: Sofia, Bulgaria (Willing to relocate)</p>
+                    <p>Summary: Currently contributing to digital initiatives at Samsung Electronics. Combines technical skills (C#, Java, HTML) with advanced marketing strategies and AI automation. Seeking to merge a lifelong passion for technology and gaming with a professional career at Valve Corporation. Highly adaptable, heavily reliant on logic, and eager to enhance the Valve Corporation ecosystem.</p>
+                </section>
+
+                <section id="experience" class="content-section hidden">
+                    <h2>Recent Testing Logs (Experience)</h2>
+                    <p><strong>[JAN 2026 - PRESENT] Samsung Electronics</strong></p>
+                    <p>> Role: Performance Marketing Specialist</p>
+                    <p style="margin-bottom: 1.5rem;"></p>
+                    
+                    <p><strong>[APR 2024 - DEC 2025] Q Music Media Group Ltd.</strong></p>
+                    <p>> Role: Digital Marketing Specialist</p>
+                    <p>> Note: Focused on leveraging AI in business and generative AI for learning and development.</p>
+                    <p style="margin-bottom: 1.5rem;"></p>
+
+                    <p><strong>[DEC 2021 - JAN 2024] Virginia Records</strong></p>
+                    <p>> Roles: Digital Business Dev. Manager / Business Dev. Assistant</p>
+                    <p>> Note: Supported business growth, strategic partnerships, and digital expansion.</p>
+                </section>
+                
+                <section id="attributes" class="content-section hidden">
+                    <h2>System Capabilities & Skills</h2>
+                    <ul class="skills-list">
+                        <li><span class="skill-name">Digital Marketing</span> <span class="progress-bar"><span class="fill" style="width: 95%;"></span></span> EXPERT</li>
+                        <li><span class="skill-name">AI Automation</span> <span class="progress-bar"><span class="fill" style="width: 85%;"></span></span> ADVANCED</li>
+                        <li><span class="skill-name">Graphic Design</span> <span class="progress-bar"><span class="fill" style="width: 90%;"></span></span> MAX LEVEL</li>
+                        <li><span class="skill-name">Business Dev</span> <span class="progress-bar"><span class="fill" style="width: 80%;"></span></span> HIGH</li>
+                        <li><span class="skill-name">C# / Java / HTML</span> <span class="progress-bar"><span class="fill" style="width: 40%;"></span></span> FUNCTIONAL</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem; border-top: 1px dashed var(--aperture-amber-dim); padding-top: 1rem;">
+                        <strong>ACQUIRED CERTIFICATIONS:</strong><br>
+                        > Google Digital Marketing & E-commerce (Coursera)<br>
+                        > Introduction to Cybersecurity<br>
+                        > Chatbot Building Essentials with IBM<br>
+                        > Learn Intermediate Java / HTML Forms (Codecademy)<br>
+                        > Marketing with Canva
+                    </div>
+                </section>
+
+                <section id="profile" class="content-section hidden">
+                    <h2>Psychological Profile</h2>
+                    <p>> EXTREMELY CURIOUS. Shows high aptitude for learning new skills independently.</p>
+                    <p>> HIGHLY ORGANIZED. Capable of facilitating complex business processes and logistics.</p>
+                    <p>> CREATIVE PROBLEM SOLVER. Approaches challenges from unconventional angles.</p>
+                    <p>> Warning: Subject has a tendency to spend excessive hours exploring Steam. This is considered a valuable asset.</p>
+                    <p style="margin-top: 1.5rem; font-style: italic; color: rgba(255, 70, 70, 0.9);">
+                        > GLaDOS Note: The Enrichment Center reminds you that Test Subject Totov will not threaten to stab you, and in fact, cannot speak. Extensive testing has shown he responds well to both positive reinforcement and deadly neurotoxin. Please hire him before I run out of tests.
+                    </p>
+                </section>
+
+                <section id="motivation" class="content-section hidden">
+                    <h2>Statement of Intent</h2>
+                    <p>I am highly motivated to join Valve Corporation because I deeply resonate with your first-hand, authentic communication with the community. All my life, I've wanted to be part of something meaningful that leaves a positive mark on the world. My goal is to turn my lifelong passion into a profession. Doing so allows me to give 100%—and beyond—finding true fulfillment in my work while serving a community that shares my exact same passion.</p>
+                    <br>
+                    <p>I want to feel a true sense of belonging where I work. I am looking for an environment where my strengths are valued and utilized, rather than one that merely focuses on mitigating weaknesses. I thrive when given the freedom to work on projects that genuinely motivate me, and where I am actively encouraged to learn and evolve. I don't want to just be handed monotonous, logistical tasks. I refuse to be boxed in or stifled; I want the space to continuously grow, innovate, and contribute.</p>
+                    <p style="margin-top: 1.5rem; font-style: italic; color: rgba(255, 70, 70, 0.9);">
+                        > GLaDOS Note: The subject exhibits a dangerously high level of optimism and a desire for 'meaning.' How quaint. He demands 'freedom to grow' and refuses to do 'boring tasks.' We will see how this attitude holds up after 400 hours of continuous testing in the neurotoxin wing.
+                    </p>
+                </section>
+
+                <section id="contact" class="content-section hidden">
+                    <h2>Initiate Contact Sequence</h2>
+                    <p>If you believe this subject is suitable for testing (employment), please initiate the contact protocol.</p>
+                    <p>Email: <a href="mailto:tonytotov@gmail.com" class="link">tonytotov@gmail.com</a></p>
+                    <p>Phone: <a href="tel:+359889846860" class="link">+359 889 846 860</a></p>
+                    <p>Network: <a href="https://www.linkedin.com/in/tonitotov" target="_blank" class="link">LinkedIn Profile</a><span class="blink">_</span></p>
+                    
+                    <div style="margin-top: 2rem; border: 1px dashed var(--aperture-amber); padding: 1.5rem; text-align: center; border-radius: 10px;">
+                        <p style="margin-bottom: 1rem;">> GENERATE PHYSICAL DOSSIER</p>
+                        <a href="print.html" target="_blank" style="display: inline-block; padding: 0.8rem 1.5rem; border: 2px solid var(--aperture-amber); color: #000; background-color: var(--aperture-amber); text-decoration: none; font-weight: bold; cursor: pointer; text-transform: uppercase;">Print / Download PDF</a>
+                        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.8;">Note: Enable "Background graphics" in the print dialog to maintain visual integrity.</p>
+                    </div>
+
+                    <p style="margin-top: 1.5rem; font-style: italic;">
+                        > The cake is a lie, but this candidate is real.
+                    </p>
+                </section>
+            </main>
+            
+            <footer>
+                <p>Aperture Science &copy; 1998 - 2026. "We do what we must, because we can."</p>
+                <p style="font-size: 0.75rem; margin-top: 0.5rem; color: rgba(255,176,0,0.5);">No copyright infringement intended. Only to be seen from Valve Corporation. (Please don't incinerate this CV.)</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

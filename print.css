@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --aperture-amber: #ffb000;
+    --bg-color: #080808;
+    --text-color: #ffb000;
+    --glados-red: #ff4646;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@page {
+    size: A4;
+    margin: 0; 
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier Prime', monospace;
+    font-size: 11pt;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    padding: 0 20mm; 
+}
+
+.page-border {
+    position: fixed;
+    top: 10mm;
+    bottom: 10mm;
+    left: 10mm;
+    right: 10mm;
+    border: 2px solid var(--aperture-amber);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 176, 0, 0.3), inset 0 0 15px rgba(255, 176, 0, 0.3);
+    pointer-events: none;
+    z-index: 999;
+}
+
+.top-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 22mm;
+    background: linear-gradient(to bottom, rgba(8,8,8,1) 50%, rgba(8,8,8,0) 100%);
+    z-index: 998;
+    pointer-events: none;
+}
+
+.bottom-mask {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 35mm;
+    background: linear-gradient(to top, rgba(8,8,8,1) 55%, rgba(8,8,8,0) 100%);
+    z-index: 998;
+    pointer-events: none;
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 12mm;
+    left: 20mm;
+    right: 20mm;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    opacity: 0.6;
+    z-index: 1000;
+}
+
+.document-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 25mm;
+    padding-bottom: 40mm;
+}
+
+header.doc-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 24pt;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.status {
+    font-size: 10pt;
+    opacity: 0.8;
+}
+
+.divider {
+    border-top: 2px dashed var(--aperture-amber);
+    margin: 1.5rem 0;
+    opacity: 0.5;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 14pt;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--aperture-amber);
+    display: inline-block;
+    padding-bottom: 0.2rem;
+}
+
+.content-block {
+    padding-left: 1rem;
+}
+
+p {
+    margin-bottom: 0.8rem;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.skills-list {
+    list-style-type: square;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.skills-list li {
+    margin-bottom: 0.3rem;
+}
+
+.certs {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(255, 176, 0, 0.3);
+}
+
+.glados-note {
+    font-style: italic;
+    color: var(--glados-red) !important;
+    margin-top: 1rem;
+    font-size: 10pt;
+}
+
+.anomaly-item {
+    margin-bottom: 1.5rem;
+    border-left: 2px solid rgba(255, 176, 0, 0.3);
+    padding-left: 1rem;
+}
+
+a {
+    color: var(--aperture-amber);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--aperture-amber);
+}
+
+footer {
+    display: none; /* Replaced by fixed-footer */
+}
+
+.page-break {
+    page-break-before: always;
+}
+
+@media print {
+    body {
+        background-color: #080808 !important;
+        color: #ffb000 !important;
+    }
+    .glados-note {
+        color: #ff4646 !important;
+    }
+}
